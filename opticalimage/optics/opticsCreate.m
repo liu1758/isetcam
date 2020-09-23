@@ -94,9 +94,15 @@ switch lower(opticsType)
         error('Unknown optics type.');
 end
 
+bandwidth = getpref('ISET', 'quickOptics', 10);
+
 % Default lens transmittance.  Not sure why I chose these wavelengths
-optics.transmittance.wave = createWavelength(370:730)';
-optics.transmittance.scale = ones(length(370:730),1);
+optics.transmittance.wave = createWavelength(370:bandwidth:730)';
+if getpref('ISET','useSingle',true)
+    optics.transmittance.scale = single(ones(numel(optics.transmittance.wave),1));
+else
+    optics.transmittance.scale = ones(numel(optics.transmittance.wave),bandwidth);
+end
 
 % Default settings for off axis and pixel vignetting
 optics = opticsSet(optics,'offAxisMethod','cos4th');
