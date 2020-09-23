@@ -98,7 +98,7 @@ legend({'wvf','oi'})
 %% Now, we make a multispectral wvf and convert the WVF to ISET
 
 % Create the wvf parameter structure with the appropriate values
-wave = (400:50:700);
+wave = createWavelength(400:50:700);
 pupilMM = 3;   % Could be 6, 4.5, or 3
 fLengthM = 17e-3;
 

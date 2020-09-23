@@ -59,7 +59,7 @@ xyY = horzcat(xy,ones(size(xy,1),1)*Y_val);
 %% Color the points outside the XYZ locus
 % Points outside the locus are the color of the background
 
-wave = 380:5:700;
+wave = createWavelength(380:5:700);
 spectrumLocus = chromaticity(ieReadSpectra('XYZ',wave));
 
 inPoints = inpolygon(xy(:,1),xy(:,2),spectrumLocus(:,1),spectrumLocus(:,2));

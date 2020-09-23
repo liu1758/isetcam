@@ -16,7 +16,7 @@ ieInit;
 
 %% Create daylight spectra with different correlated color temperatures
 
-wave = 400:770;                % Wavelength in nanometers
+wave = createWavelength(400:770);                % Wavelength in nanometers
 cct = 4000:1000:10000;         % Correlated color temperature
 spd = daylight(wave,cct,'photons');
 

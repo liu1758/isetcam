@@ -28,7 +28,7 @@ dut = sensorSet(dut,'name','My Sensor');
 % 'spectrum' slot of the object. This slot lists the wavelength sample
 % values in nanometers
 %   
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 dut = sensorSet(dut,'wave',wave);
 
 % For a sensor, the color and infrared filter transmissivities are stored in dut.color

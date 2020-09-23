@@ -57,7 +57,7 @@ function [fData, wave] = sensorColorFilter(cfType, wave, varargin)
 %}
 
 if ieNotDefined('cfType'), cfType = 'gaussian'; end
-if notDefined('wave'),     wave = 400:700; end
+if notDefined('wave'),     wave = createWavelength(400:700); end
 
 smooth = -1;
 

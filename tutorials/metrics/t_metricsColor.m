@@ -29,7 +29,7 @@ ieInit
 
 % Let's assume we have a set of gray surfaces whose reflectance
 % functions are linearly scaled with respect to one another.
-wavelength = 400:700;
+wavelength = createWavelength(400:700);
 graySurfaces = ones(length(wavelength),10)*diag([.1:.1:1]);
 
 vcNewGraphWin;

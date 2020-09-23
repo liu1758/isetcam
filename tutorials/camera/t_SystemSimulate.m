@@ -20,7 +20,7 @@ ieInit
 % 5 nm. It is also possible to expand the range to include wavelengths in
 % the near infrared (NIR) range. Of course, this would only make sense if your
 % imaging sensor has sensitivity in the NIR range. 
-wave = 400:5:710; 
+wave = createWavelength(400:5:710); 
 
 %% Scene
 % Create a radiometric description of the scene.

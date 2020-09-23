@@ -28,7 +28,7 @@ function [rects,mLocs,pSize] = chartRectangles(cp,rPatch,cPatch,sFactor)
 % Examples:
 %{
   % Puts a mark in the center of each of the patches
-  wave = 400:10:700;  radiance = rand(length(wave),50)*10^16;
+  wave = createWavelength(400:10:700);  radiance = rand(length(wave),50)*10^16;
   scene = sceneRadianceChart(wave, radiance,'patch size',20,'rowcol',[15,15]);
   sceneWindow(scene);
   sceneGet(scene,'chart parameters')

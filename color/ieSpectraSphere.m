@@ -38,7 +38,7 @@ function [spectraS, XYZ, XYZ0, sBasis] = ieSpectraSphere(wave,spectrumE,N, sBasi
 
 
 %% Set up parameters
-if ieNotDefined('wave'), wave = 400:10:700; end
+if ieNotDefined('wave'), wave = createWavelength(400:10:700); end
 if ieNotDefined('spectrumE'), spectrumE = zeros(size(wave)); end
 if ieNotDefined('N'), N = 8; end   % Matches default on sphere
 if ieNotDefined('sBasis'), sBasis = ieReadSpectra('cieDaylightBasis',wave); 

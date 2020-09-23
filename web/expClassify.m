@@ -98,7 +98,7 @@ outputOIFolder = fullfile(inputFolder,'opticalimage');
 if ~exist(outputOIFolder,'dir'), mkdir(outputOIFolder); end
 
 %% Make the optical images
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 
 % our default sensor seems to be closer to 8 x 10 not 3 x 4,
 desiredImageSize = [768 1024]; % a decent compromise that should work on average

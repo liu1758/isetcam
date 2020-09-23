@@ -23,7 +23,7 @@ ieInit
 
 % These are are essential for creating calibrated signals.  So, we load
 % them first.
-wavelength = 390:730;
+wavelength = createWavelength(390:730);
 XYZ = ieReadSpectra('XYZ.mat',wavelength);
 
 %% Model a display

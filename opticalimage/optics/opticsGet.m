@@ -542,7 +542,7 @@ switch parm
         % Sometimes the optics wavelength have not been assigned because
         % there is no scene and no oiCompute has been run.  So, we can just
         % choose a sample set.
-        if isempty(wavelength), wavelength = (400:10:700)*10^-9; end
+        if isempty(wavelength), wavelength = createWavelength((400:10:700)*10^-9); end
 
         % See dlCore.m for a description of the formula.  We divide by the
         % scale factor, instead of multiplying, because these are

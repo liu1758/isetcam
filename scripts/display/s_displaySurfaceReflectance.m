@@ -84,7 +84,7 @@ save(fname,'d');
 
 %%  Try it out
 
-thisWave = 400:10:700;
+thisWave = createWavelength(400:10:700);
 scene = sceneFromFile('FruitMCC_6500.tif','rgb',50,'reflectance-display',thisWave);
 sceneWindow(scene);
 

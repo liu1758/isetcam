@@ -25,7 +25,7 @@
 
 % Gaussian type:
 cfType = 'gaussian'; 
-wavelength = 400:10:700; 
+wavelength = createWavelength(400:10:700); 
 cPos       = 400:40:700; 
 width      = ones(size(cPos))*30;
 

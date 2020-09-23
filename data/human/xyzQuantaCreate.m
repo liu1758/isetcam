@@ -2,7 +2,7 @@
 %
 
 %%
-wave = 380:780;
+wave = createWavelength(380:780);
 fname = fullfile(isetRootPath,'data','human','XYZ.mat');
 xyzEnergy = ieReadSpectra(fname,wave,0);
 % vcNewGraphWin; plot(wave,xyzEnergy); grid on

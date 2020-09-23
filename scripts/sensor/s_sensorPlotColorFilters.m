@@ -21,7 +21,7 @@ ieInit
 
 %% Example calibrated camera color filters 
 cList = {'NikonD1','NikonD70','NikonD100','NikonD200IR','interleavedRGBW'};
-wavelength = 400:1000;  % Out through IR in some cases
+wavelength = createWavelength(400:1000);  % Out through IR in some cases
 
 %% Plot the filters for each camera
 for ii=1:length(cList)

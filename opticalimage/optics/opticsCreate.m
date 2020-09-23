@@ -68,7 +68,7 @@ switch lower(opticsType)
         if ~isempty(varargin), oi = varargin{1}; else, oi = oiCreate; end
         wave = oiGet(oi,'wave');
         if isempty(wave)
-            wave = 400:10:700; 
+            wave = createWavelength(400:10:700); 
             oi = oiSet(oi,'wave',wave);
         end
         psfType = 'gaussian';  waveSpread = wave/wave(1);
@@ -95,7 +95,7 @@ switch lower(opticsType)
 end
 
 % Default lens transmittance.  Not sure why I chose these wavelengths
-optics.transmittance.wave = (370:730)';
+optics.transmittance.wave = createWavelength(370:730)';
 optics.transmittance.scale = ones(length(370:730),1);
 
 % Default settings for off axis and pixel vignetting

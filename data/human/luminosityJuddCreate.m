@@ -95,7 +95,7 @@ vcNewGraphWin; plot(wave,dataQuanta./data); grid on
 %  modified luminosity.  The CIE values differs from these in the blue by a
 %  slight amount (though a lot in ratio).
 
-wavelength = [400:5:700];
+wavelength = createWavelength(400:5:700);
 lumJudd = ieReadSpectra('luminosityJudd',wavelength);
 
 smithPokornyCones = ieReadSpectra('smithPokornyCones',wavelength);

@@ -23,7 +23,7 @@
 
 %%  Read the reflectance functions of the MCC
 
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 reflectance = macbethReadReflectance(wave);
 % plotReflectance(wave,reflectance);
 

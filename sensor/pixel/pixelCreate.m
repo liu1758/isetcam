@@ -28,7 +28,7 @@ function pixel = pixelCreate(pixelType,wave,pixelSizeM)
 
 if ieNotDefined('pixelType'), pixelType = 'default'; end
 if ieNotDefined('wave')
-    wave = (400:10:700); 
+    wave = createWavelength(400:10:700); 
     wave = wave(:); 
 end
 if ieNotDefined('pixelSizeM'), pixelSizeM = 2.8e-6; end

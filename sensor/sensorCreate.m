@@ -231,7 +231,7 @@ switch sensorName
         else, sensorSize = varargin{3};
         end
         if length(varargin) == 4, wave = varargin{4}; 
-        else, wave = 400:10:700;
+        else, wave = createWavelength(400:10:700);
         end
         sensor = sensorSet(sensor,'wave',wave);
         sensor = sensorCustom(sensor,filterPattern,filterFile);

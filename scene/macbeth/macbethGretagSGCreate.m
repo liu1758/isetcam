@@ -74,7 +74,7 @@ sceneWindow
 
 %%
 % interpolate scene
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 scene = sceneInterpolateW(scene,wave,1);
 ieAddObject(scene);
 sceneWindow

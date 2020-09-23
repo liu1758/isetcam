@@ -185,7 +185,7 @@ scene.metadata = [];   % Metadata for machine learning apps
 if strncmp(sceneName,'macbeth',5) || ...
         strcmp(sceneName,'default') || ...
     strcmp(sceneName,'empty')
-    patchSize = 16; wave = 400:10:700; surfaceFile = 'macbethChart.mat';
+    patchSize = 16; wave = createWavelength(400:10:700); surfaceFile = 'macbethChart.mat';
     if ~isempty(varargin), patchSize = varargin{1}; end  % pixels per patch
     if length(varargin) > 1, wave = varargin{2}; end     % wave
     if length(varargin) > 2, surfaceFile = varargin{3}; end % Reflectances
@@ -372,7 +372,7 @@ switch sceneName
         
     case {'uniformeespecify'}   % Equal energy, specify waveband
         % scene = sceneCreate('uniformEESpecify',sz,wavelength);
-        sz = 32; wavelength = 400:10:700;
+        sz = 32; wavelength = createWavelength(400:10:700);
         if ~isempty(varargin), sz = varargin{1}; end
         if length(varargin) > 1, wavelength = varargin{2}; end
         scene = sceneSet(scene,'wave',wavelength(:));
@@ -1322,7 +1322,7 @@ function scene = sceneSlantedBar(scene,imSize,barSlope,fieldOfView,wave)
 if ieNotDefined('imSize'),      imSize = 384; end
 if ieNotDefined('barSlope'),    barSlope = 2.6; end
 if ieNotDefined('fieldOfView'), fieldOfView = 2; end
-if ieNotDefined('wave'),        wave = 400:10:700; end
+if ieNotDefined('wave'),        wave = createWavelength(400:10:700); end
 scene = sceneSet(scene,'name','slantedBar');
 
 scene = sceneSet(scene,'wave',wave);

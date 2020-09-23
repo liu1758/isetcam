@@ -24,7 +24,7 @@ ieInit
 
 % This is a spectral radiance scene
 % We image that it sweeps out 5 deg of visual angle
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 fullFileName = fullfile(isetRootPath,'data','images','multispectral','StuffedAnimals_tungsten-hdrs');
 scene = sceneFromFile(fullFileName,'multispectral',[],[],wave);
 scene = sceneSet(scene,'fov',5);

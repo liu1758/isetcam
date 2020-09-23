@@ -23,7 +23,7 @@
 
 ieInit;
 
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 
 % Store up the sRGB and Adobe RGB chromaticity parameters for plotting the
 % chromaticities, later

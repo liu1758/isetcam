@@ -33,7 +33,7 @@ scene = sceneCreate('macbeth fluorescent');
 ieAddObject(scene); sceneWindow;
 
 %% IR case
-wave = 390:900;
+wave = createWavelength(390:900);
 scene = sceneCreate('macbeth equal energy infrared',[],wave);
 ieAddObject(scene); sceneWindow;
 assert(isequal(scene.spectrum.wave,390:900),'Bad IR scene create');

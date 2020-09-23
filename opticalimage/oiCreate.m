@@ -105,7 +105,7 @@ switch ieParamFormat(oiType)
         % Uniform, equal energy optical image. No cos4th falloff. Might be used in
         % lux-sec SNR testing or scripting.  Not really used now
         % (5.3.2005).
-        wave = 400:10:700; sz = 32;
+        wave = createWavelength(400:10:700); sz = 32;
         if length(varargin) >= 1, sz = varargin{1}; end
         if length(varargin) >= 2, wave = varargin{2}; end
         oi = oiCreateUniformEE(sz,wave);
@@ -115,7 +115,7 @@ switch ieParamFormat(oiType)
         %
         % Black scene with huge FOV.  Used to set zerolevel in the sensor,
         % and perhaps other electrical testing code.
-        wave = 400:10:700; sz = 32;
+        wave = createWavelength(400:10:700); sz = 32;
         if length(varargin) >= 1, sz = varargin{1}; end
         if length(varargin) >= 2, wave = varargin{2}; end
         oi = oiCreate; oi = oiSet(oi,'wave',wave);

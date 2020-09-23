@@ -5,7 +5,7 @@
 %
 
 %% Stockman and XYZ
-wave = 400:5:700;
+wave = createWavelength(400:5:700);
 xyz = ieReadSpectra('XYZ',wave);
 stock = ieReadSpectra('Stockman',wave);
 

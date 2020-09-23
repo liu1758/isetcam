@@ -12,7 +12,7 @@ ieInit
 % they are identical at 550, when there is no charomatic abberation
 
 % Create the wvf parameter structure with the appropriate values
-for thisWave = [400 500 600 700]
+for thisWave = createWavelength(400 500 600 700)
     pupilMM = 3;   % Could be 6, 4.5, or 3
     fLengthM = 17e-3;
     

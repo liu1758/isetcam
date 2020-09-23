@@ -42,7 +42,7 @@ ieInit
 % Load in the data representing the macbeth color checker surface
 % reflectances.  The data are stored in the columns of the matrix.
 
-wavelength = 400:10:700;
+wavelength = createWavelength(400:10:700);
 macbethChart = ieReadSpectra('macbethChart',wavelength);
 
 % The different columns of this matrix represent various colored surfaces.

@@ -169,7 +169,7 @@ switch lower(idealType)
         % for pixel area, so that we never get any electrons.  Hence,
         % scaling is not optional.
         fname  = fullfile(isetRootPath,'data','human','XYZQuanta.mat');
-        wave = 400:10:700;
+        wave = createWavelength(400:10:700);
         transmissivities = vcReadSpectra(fname, wave);   %Load and interpolate filters
         transmissivities = transmissivities/max(transmissivities(:));
         

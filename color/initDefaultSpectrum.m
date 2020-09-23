@@ -23,7 +23,7 @@ if ~exist('spectralType','var')||isempty(spectralType), spectralType = 'hyperspe
 
 switch lower(spectralType)
     case {'spectral','multispectral','hyperspectral'}
-        object.spectrum.wave = [400:10:700]';
+        object.spectrum.wave = createWavelength(400:10:700)';
         
     case 'monochrome'
         object.spectrum.wave = 550;

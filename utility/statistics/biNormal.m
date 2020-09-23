@@ -24,6 +24,13 @@ if xSpread > 0.5*N || ySpread > 0.5*N
     warning(sprintf('Large spread compared to support %f %f',xSpread,ySpread))
 end
 
+if isequal(class(xSpread),'single')
+    xSpread = double(xSpread);
+end
+if isequal(class(ySpread),'single')
+    ySpread = double(ySpread);
+end
+
 xG = fspecial('gauss',[1,N],xSpread);
 yG = fspecial('gauss',[N,1],ySpread);
 g = (yG(:)*xG(:)');

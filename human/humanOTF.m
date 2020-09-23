@@ -65,7 +65,7 @@ if ieNotDefined('pRadius'), p = 0.0015; else p = pRadius; end
 if ieNotDefined('D0'), D0 = 1/0.017; end   
 
 % Wavelength in nanometers
-if ieNotDefined('wave'), wave = (400:700); end
+if ieNotDefined('wave'), wave = createWavelength(400:700); end
 nWave = length(wave);
 
 % We use a frequency support that covers 60 cyc/deg.

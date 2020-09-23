@@ -36,7 +36,7 @@ function T = imageMCCTransform(sensorQE,targetQE,illuminant,wave)
 
 %% Check arguments
 if ieNotDefined('illuminant'), illuminant = 'D65'; end
-if ieNotDefined('wave'), wave = 400:10:700; end
+if ieNotDefined('wave'), wave = createWavelength(400:10:700); end
 
 %% Read the MCC surface spectra and a target illuminant, say D65. 
 % Combine them. 

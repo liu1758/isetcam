@@ -29,7 +29,7 @@ slope = 7/3;
 meanL = 100; % cd/m2
 viewD = 1;   % Viewing distance (m)
 fov   = 5;   % Horizontal field of view  (deg)
-wave = 400:4:1068;
+wave = createWavelength(400:4:1068);
 
 scene = sceneCreate('slantedBar',sz,slope,fov,wave);
 

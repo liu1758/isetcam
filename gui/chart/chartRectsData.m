@@ -38,7 +38,7 @@ function data = chartRectsData(obj,mLocs,delta,fullData,dataType)
 
 % Examples:
 %{
- wave = 400:10:700;  radiance = rand(length(wave),50)*10^16;
+ wave = createWavelength(400:10:700);  radiance = rand(length(wave),50)*10^16;
  scene = sceneRadianceChart(wave, radiance,'patch size',25,'rowcol',[5,10]);
  sceneWindow(scene);
  wholeChart = true;

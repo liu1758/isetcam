@@ -35,7 +35,7 @@ if ieNotDefined('dType'), dType = 'colorfilter'; end
 % Read the Excel spread sheet data
 [a,comment] = xlsread(xlFname);
 
-wavelength = a(:,1); 
+wavelength = createWavelength(a(:,1)); 
 l = ~isnan(wavelength); 
 wavelength = wavelength(l);
 

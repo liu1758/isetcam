@@ -18,7 +18,7 @@
 % We will operate in the the visible + NIR regime. Note that the wavelength
 % support for Option 4 ('Choose a scene') will come from the multispectral
 % scene.
-spectrum.wave = (400:10:1000)';
+spectrum.wave = createWavelength(400:10:1000)';
 scene_type_index = 1;
 switch scene_type_index
     case 1 % MCC

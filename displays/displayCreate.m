@@ -60,7 +60,7 @@ function d = displayCreate(displayName,varargin)
 %{
    d = displayCreate;     % The default is 'reflectance-display'
    d = displayCreate('lcdExample');
-   wave = 400:5:700; d = displayCreate('lcdExample',wave);
+   wave = createWavelength(400:5:700); d = displayCreate('lcdExample',wave);
 %}
 
 %% Arguments
@@ -143,7 +143,7 @@ function d = displayDefault(d)
 % I now think we should use one of the calibrated displays as the default.
 % But I am reluctant to change for compatibility reasons (BW).
 
-wave = 400:10:700;
+wave = createWavelength(400:10:700);
 spd = pinv(colorBlockMatrix(length(wave)))/700;  % Makes 100 cd/m2 peak
 d = displaySet(d,'wave',wave);
 d = displaySet(d,'spd',spd);

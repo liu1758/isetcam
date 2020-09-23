@@ -74,7 +74,7 @@ sceneWindow(scene); pause(0.1);
 
 %% Macbeth Color Checker
 patchSizePixels = 16;
-wave = (380:5:720);
+wave = createWavelength(380:5:720);
 scene = sceneCreate('macbeth tungsten',patchSizePixels,wave,'bit depth',64);
 sceneWindow(scene); pause(0.1);
 
@@ -84,13 +84,13 @@ sceneWindow(scene); pause(0.1);
 
 %% Macbeth Color Checker
 patchSizePixels = 16;
-wave = (380:5:720);
+wave = createWavelength(380:5:720);
 scene = sceneCreate('macbeth tungsten',patchSizePixels,wave,'bit depth',64);
 sceneWindow(scene); pause(0.1);
 
 %% Uniform Field
 sz = 128;
-wavelength = 380:10:720;
+wavelength = createWavelength(380:10:720);
 scene = sceneCreate('uniformEESpecify',sz,wavelength);
 sceneWindow(scene); pause(0.1);
 

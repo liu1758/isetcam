@@ -27,7 +27,7 @@ ieInit
 
 %% Plot the light's spectral energy
 
-wave = 400:5:720;
+wave = createWavelength(400:5:720);
 spd = blackbody(wave,3500);
 
 vcNewGraphWin; 
