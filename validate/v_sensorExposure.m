@@ -11,16 +11,18 @@
 %%
 ieInit;
 
-%%
+%% Create a large scene
 uScene = sceneCreate('uniform equal energy');  % Uniform scene
 uScene = sceneAdjustLuminance(uScene,100);
+
+% DL lens and multiple pixel sizes
 oi  = oiCreate;                     % Diffraction limited lens
 pSize = [1, 1.5, 2, 2.5, 3]*1e-6;   % Microns
 
 % Expected number of electrons. As we vary pixel size changes, the exposure
 % duration varies to achieve this number of electrons, Computed Sept 21,
 % 2020
-expected = 5200;
+expected = 5258;
 tolerance = 0.5;
 
 %%  Sony IMX363 QE
@@ -41,8 +43,10 @@ for ii=1:length(pSize)
     thisSensor = sensorSet(sensor,'pixel size constant fill factor',pSize(ii));
     thisSensor = sensorCompute(thisSensor,uOI);
     e = sensorGet(thisSensor,'electrons');
+    %nanmean(e(:))
+    % sensorGet(thisSensor,'exp time');
     assert( ((nanmean(e(:)) - expected)/100) < tolerance);
-    fprintf('%.2f %2f %f\n',pSize(ii)*1e6,sensorGet(thisSensor,'exp time','sec'),nanmean(e(:)));
+    fprintf('%.2f %2f %f\n',pSize(ii)*1e6,sensorGet(thisSensor,'exp time','ms'),nanmean(e(:)));
 end
 
 % sensorWindow(thisSensor);
@@ -58,7 +62,7 @@ for ii=1:length(pSize)
     thisSensor = sensorCompute(thisSensor,uOI);
     e = sensorGet(thisSensor,'electrons');
     assert( ((nanmean(e(:)) - expected)/100) < tolerance);
-    fprintf('%.2f %2f %f\n',pSize(ii)*1e6,sensorGet(thisSensor,'exp time','sec'),nanmean(e(:)));
+    fprintf('%.2f %2f %f\n',pSize(ii)*1e6,sensorGet(thisSensor,'exp time','ms'),nanmean(e(:)));
 end
 
 %%  Big aperture.  Exposure times become quite short.
